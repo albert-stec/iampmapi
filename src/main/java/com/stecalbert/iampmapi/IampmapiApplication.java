@@ -14,17 +14,17 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class IampmapiApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(IampmapiApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(IampmapiApplication.class, args);
+    }
 
-	@Bean
-	public Docket api() {
-		return new Docket(DocumentationType.SWAGGER_2)
-				.useDefaultResponseMessages(false)
-				.select()
-				.apis(RequestHandlerSelectors.withClassAnnotation(RestController.class))
-				.paths(PathSelectors.any())
-				.build();
-	}
+    @Bean
+    public Docket api() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .useDefaultResponseMessages(false)
+                .select()
+                .apis(RequestHandlerSelectors.withClassAnnotation(RestController.class))
+                .paths(PathSelectors.any())
+                .build();
+    }
 }
