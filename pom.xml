@@ -73,6 +73,14 @@
                     </excludes>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>11</source><!-- 1.11 not working -->
+                    <target>11</target><!-- 1.11 not working -->
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
