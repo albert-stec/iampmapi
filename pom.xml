@@ -14,7 +14,7 @@
     <name>iampmapi</name>
     <description>IAMPM test API</description>
     <properties>
-        <java.version>11</java.version>
+        <java.version>8</java.version>
     </properties>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
@@ -71,14 +71,6 @@
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>11</source><!-- 1.11 not working -->
-                    <target>11</target><!-- 1.11 not working -->
                 </configuration>
             </plugin>
         </plugins>
