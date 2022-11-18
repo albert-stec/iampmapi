@@ -7,6 +7,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,6 +30,7 @@ public class UserController {
     UserService userService;
 
     @GetMapping
+    @CrossOrigin
     public ResponseEntity getAll(@RequestHeader("access-token") String accessToken,
                                  @RequestParam(required = false, name = "email") String email,
                                  @RequestParam(required = false, name = "name") String name) {
@@ -56,6 +58,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
+    @CrossOrigin
     public ResponseEntity findById(@RequestHeader("access-token") String accessToken, @PathVariable String id) {
         if (accessToken == null) {
             throw new UnauthorizedException();
@@ -72,6 +75,7 @@ public class UserController {
     }
 
     @PostMapping
+    @CrossOrigin
     public ResponseEntity create(@RequestHeader("access-token") String accessToken, @RequestBody User user) {
         if (!accessToken.equals(AllUtils.token)) {
             throw new UnauthorizedException();
@@ -92,6 +96,7 @@ public class UserController {
     }
 
     @DeleteMapping
+    @CrossOrigin
     @ApiOperation(value = "Delete all", notes = "Delete all - ADMIN only")
     public void deleteAll(@RequestHeader("access-token") String accessToken) {
         if (accessToken == null) {
